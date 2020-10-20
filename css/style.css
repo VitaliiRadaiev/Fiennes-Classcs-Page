@@ -555,6 +555,15 @@ img {
   vertical-align: top;
 }
 
+a {
+  color: #5a92ab;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .page {
   height: 100%;
 }
@@ -569,11 +578,22 @@ img {
 .container_large {
   max-width: 168rem;
   padding: 0 3rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .container_large-1700 {
   max-width: 176rem;
   padding: 0 3rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container_small {
+  max-width: 89rem;
+  padding: 0 1.5rem;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .ibg {
@@ -597,6 +617,16 @@ img {
 
 .logo img {
   width: 100%;
+}
+
+.title-1 {
+  color: #000000;
+  font-family: "TTNorms", sans-serif;
+  font-size: 5.8rem;
+  font-weight: 700;
+  letter-spacing: 0.45rem;
+  line-height: 7.4rem;
+  text-transform: uppercase;
 }
 
 .title-2 {
@@ -1002,6 +1032,15 @@ img {
 
 .one-img-block img {
   width: 100%;
+}
+
+.img-full-screen {
+  padding: 0 3rem;
+}
+
+.img-full-screen__body {
+  width: 100%;
+  height: 95vh;
 }
 
 .three-img-block_reverse .three-img-block__body {
@@ -2473,6 +2512,7 @@ textarea.input {
   line-height: 2.9rem;
   padding: 1rem 0;
   position: relative;
+  text-decoration: none !important;
 }
 
 .header__menu-link.active {
@@ -3218,6 +3258,86 @@ textarea.input {
 
 .journal__content-pagination {
   margin: 7.4rem 0 5rem;
+}
+
+.journal-detail__content {
+  margin: 13.6rem 0 7rem;
+}
+
+.journal-detail__title {
+  text-align: center;
+  margin-bottom: 5.5rem;
+}
+
+.journal-detail__subtitle {
+  color: #000000;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 3rem;
+  margin-bottom: 3.2rem;
+  text-align: center;
+}
+
+.journal-detail__social {
+  margin-bottom: 12rem;
+}
+
+.journal-detail__social.social-list {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.journal-detail__img {
+  margin: 5rem 0 9rem;
+}
+
+.article {
+  text-align: center;
+}
+
+.article__line {
+  display: inline-block;
+  width: 8rem;
+  height: 0.7rem;
+  background: #5a92ab;
+  margin: 5.5rem 0;
+}
+
+.article .article__medium-text {
+  margin-bottom: 8.7rem;
+}
+
+.article .article__medium-text p {
+  margin-bottom: 3.2rem;
+  color: #000000;
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 3.4rem;
+}
+
+.article p {
+  color: #000000;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2.2rem;
+  line-height: 2.4rem;
+}
+
+.article__images {
+  margin: 6.5rem -2rem;
+}
+
+.article__images .three-img-block__big {
+  padding-bottom: 44%;
+}
+
+.article__images .three-img-block__smal {
+  padding-bottom: 91%;
+}
+
+.article figure img {
+  width: 100%;
 }
 
 .email-submit {
@@ -3977,6 +4097,12 @@ textarea.input {
 }
 
 @media (max-width: 1023px) {
+  .title-1 {
+    font-size: 4rem;
+    letter-spacing: 0.657rem;
+    line-height: 6rem;
+  }
+
   .title-2 {
     font-size: 4rem;
     letter-spacing: 0.657rem;
@@ -4090,6 +4216,49 @@ textarea.input {
     min-height: 36rem;
   }
 
+  .journal-detail__content {
+    margin: 7.6rem 0 7rem;
+  }
+
+  .journal-detail__title {
+    margin-bottom: 3.5rem;
+  }
+
+  .journal-detail__subtitle {
+    margin-bottom: 1.2rem;
+  }
+
+  .journal-detail__social {
+    margin-bottom: 5rem;
+  }
+
+  .article .article__medium-text {
+    margin-bottom: 4.7rem;
+  }
+
+  .article .article__medium-text p {
+    margin-bottom: 2.2rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .article p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+
+  .article__images .three-img-block__row_1 {
+    margin-top: 1.5rem;
+  }
+
+  .article__images {
+    margin: 6.5rem 0rem;
+  }
+
+  .article__images .three-img-block__column {
+    width: calc(50% - 0.75rem);
+  }
+
   .footer__nav {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
@@ -4126,6 +4295,12 @@ textarea.input {
     margin: 0 auto;
     width: 100%;
     padding: 0 1.5rem;
+  }
+
+  .title-1 {
+    font-size: 3rem;
+    letter-spacing: 0.457rem;
+    line-height: 4rem;
   }
 
   .title-2 {
@@ -4218,6 +4393,14 @@ textarea.input {
   .card__text-wrap > p {
     font-size: 1.6rem;
     line-height: 2rem;
+  }
+
+  .img-full-screen {
+    padding: 0 1.5rem;
+  }
+
+  .img-full-screen__body {
+    height: 60vh;
   }
 
   .three-img-block_reverse .three-img-block__row_1 {
@@ -4611,6 +4794,12 @@ textarea.input {
 }
 
 @media (max-width: 479.98px) {
+  .title-1 {
+    font-size: 2.2rem;
+    letter-spacing: 0.357rem;
+    line-height: 3rem;
+  }
+
   .title-2 {
     font-size: 2.2rem;
     letter-spacing: 0.357rem;
