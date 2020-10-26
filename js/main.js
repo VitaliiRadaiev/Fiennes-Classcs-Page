@@ -387,6 +387,7 @@ cardJournalHandler();;
 			var mySwiper = new Swiper(item.querySelector('.swiper-container'), {
 			slidesPerView:1,
 			effect: 'fade',
+			loop: true,
 			speed: 600,
 			autoplay: {
 			  delay: 3000,
