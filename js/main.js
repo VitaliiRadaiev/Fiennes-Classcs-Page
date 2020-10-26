@@ -386,13 +386,16 @@ cardJournalHandler();;
 		slider.forEach(item => {
 			var mySwiper = new Swiper(item.querySelector('.swiper-container'), {
 			slidesPerView:1,
-			loop: true,
 			effect: 'fade',
 			speed: 600,
+			autoplay: {
+			  delay: 3000,
+			},
 			spaceBetween: 15,
 			pagination: {
 			    el: item.querySelector('.swiper-pagination'),
-			    clickable: true,
+			   // clickable: true,
+			    type: 'progressbar',
 			  },
 			})
 		})

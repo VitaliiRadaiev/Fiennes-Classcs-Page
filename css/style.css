@@ -788,9 +788,9 @@ a {
 }
 
 .text-block__line._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -809,9 +809,9 @@ a {
 }
 
 .text-block__suptitle._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -831,9 +831,9 @@ a {
 }
 
 .text-block__title._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -858,9 +858,9 @@ a {
 }
 
 .text-block__text._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -882,9 +882,9 @@ a {
 }
 
 .text-block__btn-wrap._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -1100,9 +1100,9 @@ a {
 }
 
 .card__text._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -1136,9 +1136,9 @@ a {
 }
 
 .card__suptitle._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -1161,9 +1161,9 @@ a {
 }
 
 .card__title._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -1186,9 +1186,9 @@ a {
 }
 
 .card__btn-wrap._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -1207,9 +1207,9 @@ a {
 }
 
 .card .line._active {
-  -webkit-transition: all .8s ease 0.4s;
-  -o-transition: all .8s ease 0.4s;
-  transition: all .8s ease 0.4s;
+  -webkit-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   -webkit-transform: translate(0, 0);
       -ms-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -3202,56 +3202,80 @@ textarea.input {
 .slider__img {
   height: 80vh;
   min-height: 48rem;
-  background-color: #b9b9b9;
+  background-color: #fff;
+}
+
+.slider .swiper-slide {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.slider .swiper-slide img {
+  opacity: 0;
+  -webkit-transition: all .6s ease;
+  -o-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.slider .swiper-slide.swiper-slide-active img {
+  opacity: 1;
 }
 
 .slider .swiper-pagination {
-  bottom: 1.7rem;
+  top: auto;
+  bottom: 1.7em;
+  width: 40%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  /*		bottom: 1.7rem;
+		& > span {
+			position: relative;
+			height: 0.3rem;
+			width: 5.5%;
+			z-index: 5;
+			opacity: 1;
+			border-radius: 0;
+			padding: 2.5rem 0;
+			background: transparent;
+			margin: 0px 6px !important;
+
+			&:after {
+				position: absolute;
+				content: '';
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				width: 100%;
+				z-index: 1;
+				background: rgba(255, 255, 255, 0.57);
+				height: 0.3rem;
+			}
+
+			&.swiper-pagination-bullet-active:before {
+				position: absolute;
+				content: '';
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				height: 0.3rem;
+				width: 50%;
+				background: #fff;
+				z-index: 2;
+				transition: all .2s ease;
+				animation: dotAnim .2s ease;
+			}
+
+		}*/
 }
 
-.slider .swiper-pagination > span {
-  position: relative;
-  height: 0.3rem;
-  width: 5.5%;
-  z-index: 5;
-  opacity: 1;
-  border-radius: 0;
-  padding: 2.5rem 0;
-  background: transparent;
-  margin: 0px 6px !important;
-}
-
-.slider .swiper-pagination > span:after {
-  position: absolute;
-  content: '';
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 100%;
-  z-index: 1;
+.slider .swiper-pagination .swiper-pagination-progressbar {
   background: rgba(255, 255, 255, 0.57);
-  height: 0.3rem;
 }
 
-.slider .swiper-pagination > span.swiper-pagination-bullet-active:before {
-  position: absolute;
-  content: '';
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  left: 0;
-  height: 0.3rem;
-  width: 50%;
+.slider .swiper-pagination .swiper-pagination-progressbar-fill {
   background: #fff;
-  z-index: 2;
-  -webkit-transition: all .2s ease;
-  -o-transition: all .2s ease;
-  transition: all .2s ease;
-  -webkit-animation: dotAnim .2s ease;
-          animation: dotAnim .2s ease;
 }
 
 .video-block__body {
