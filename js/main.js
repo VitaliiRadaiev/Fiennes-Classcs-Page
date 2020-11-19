@@ -446,18 +446,21 @@ cardVideoHandler();;
 
 		var mySwiper = new Swiper(heroSlider, {
 		slidesPerView:1,
-		loop: true,
+		//loop: true,
 		effect: 'fade',
 		autoplay: {
 		  delay: 4000,
 		},
 		speed: 1000,
 
-		pagination: {
-		    el: heroSlider.querySelector('.swiper-pagination'),
-		     clickable: true,
-		     type: 'progressbar',
-		  },
+		// pagination: {
+		//     el: heroSlider.querySelector('.swiper-pagination'),
+		//      clickable: true,
+		//      type: 'progressbar',
+		//   },
+		scrollbar: {
+		  el: heroSlider.querySelector('.swiper-scrollbar'),
+		},
 		})
 	}
 }
