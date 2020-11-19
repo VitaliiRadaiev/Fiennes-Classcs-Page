@@ -66,7 +66,10 @@ let _slideToggle = (target, duration = 500) => {
 	}
 }
 //========================================
-
+var global = {
+	lng: '',
+	lat: '',
+}
 
 $(document).ready(function() {
 	// ==== Popup form handler====
@@ -244,7 +247,7 @@ if (animItems.length > 0) {
 	setTimeout(() => {
 		animOnScroll();
 	}, 300);
-};
+}; 
 
 // === Проверка, поддержка браузером формата webp ==================================================================
 
@@ -308,6 +311,7 @@ cardJournalHandler();;
 	let slider = document.querySelectorAll('.reviews-slider');
 	if(slider.length>0) {
 		slider.forEach(item => {
+			let paginationMode = null;
 			var mySwiper = new Swiper(item.querySelector('.swiper-container'), {
 			slidesPerView:1,
 			autoHeight: true,
@@ -315,11 +319,38 @@ cardJournalHandler();;
 			speed: 600,
 			spaceBetween: 15,
 			pagination: {
-			    el: item.querySelector('.swiper-pagination'),
+			    el: item.querySelector('.swiper-container > .swiper-pagination'),
 			    clickable: true,
 			  },
-			})
+			on: {
+				slideChange: function() {
+					if(paginationMode) {
+						paginationMode();
+					}
+				}
+			}  
 		})
+
+		    paginationMode = () => {
+				item.querySelectorAll('.swiper-slide').forEach(slide => {
+				let pagination = item.querySelector('.swiper-container > .swiper-pagination').cloneNode(true);
+					let innerPagin = slide.querySelector('.swiper-pagination');
+
+					if(innerPagin) {
+						innerPagin.remove();
+					}
+
+					slide.append(pagination);
+					item.querySelector('.swiper-container').style.height = 'auto';
+				})
+			}
+
+			paginationMode();
+			
+			let slide = item.querySelector('.swiper-slide.swiper-slide-active');
+			item.querySelector('.swiper-container').style.height = slide.clientHeight + 'px';
+		});
+
 	}
 }
 // == and  slider ==========================================================================
@@ -329,12 +360,10 @@ function cardVideoHandler() {
 		if(video.paused) {
 			video.play();
 			btn.firstElementChild.className = 'icon-pause2';
-			btn.firstElementChild.style.marginLeft = '0px';
 
 		} else {
 			video.pause();
 			btn.firstElementChild.className = 'icon-play3';
-			btn.firstElementChild.style.marginLeft = '0.4rem';
 		}
 	}
 
@@ -357,7 +386,6 @@ function cardVideoHandler() {
 				video.addEventListener('ended', () => {
 					video.pause();
 					btn.firstElementChild.className = 'icon-play3';
-					btn.firstElementChild.style.marginLeft = '0.4rem';
 				});
 				video.addEventListener('mousemove', (e) => { 
 					if(!video.paused) {
@@ -423,11 +451,12 @@ cardVideoHandler();;
 		autoplay: {
 		  delay: 4000,
 		},
-		speed: 800,
+		speed: 1000,
 
 		pagination: {
 		    el: heroSlider.querySelector('.swiper-pagination'),
 		     clickable: true,
+		     type: 'progressbar',
 		  },
 		})
 	}
@@ -462,25 +491,12 @@ cardVideoHandler();;
 // == and  slider ==========================================================================
 
 
-// == video block ==========================================================================
-{
-	let video = document.getElementById('player');
-	if(video) {
-		const player = new Plyr(video);
-
-		player.on('ready', event => {
-		  const instance = event.detail.plyr;
-		});
-	}
-}
-// == and  video block ==========================================================================
-
 // ==  slider-2 ==========================================================================
 {
 	let slider = document.querySelector('.slider-2 .swiper-container');
 	if(slider) {
 
-		var mySwiper = new Swiper(slider, {
+	    var mySwiper = new Swiper(slider, {
 		slidesPerView:'auto',
 		speed: 600,
 		spaceBetween: 65,
@@ -488,6 +504,14 @@ cardVideoHandler();;
 		scrollbar: {
 		  el: slider.querySelector('.swiper-scrollbar'),
 		},
+		on: {
+			slideChange: () => {
+				console.log('test11')
+				if(mySwiper) {
+					console.dir(mySwiper);
+				}
+			}
+		}, 
 		 breakpoints: {
 		 	320: {
 		 		spaceBetween: 15
@@ -498,9 +522,15 @@ cardVideoHandler();;
 		   1024: {
 		   	spaceBetween: 65
 		   },
-		 }   
+		 },  
 		})
+
+		mySwiper.on('slideChange', function () {
+		  console.log('slide changed');
+		});
+
 	}
+
 }
 // == and  slider-2 ==========================================================================
 ;
@@ -727,7 +757,7 @@ function selects_update_all() {
 			select_item(select);
 		}
 	}
-};
+}; 
 // === // CONTACT ==================================================================
 
 });
