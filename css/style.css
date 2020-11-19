@@ -3468,7 +3468,7 @@ textarea.input {
       -ms-flex-align: end;
           align-items: flex-end;
   height: 9rem;
-  width: 55%;
+  width: 40%;
   margin: 0 auto 0.5rem;
 }
 
@@ -5974,7 +5974,7 @@ textarea.input {
 
 @media (max-width: 1024px) {
   .hero-slider__body .scrollbar-wrap {
-    width: 85%;
+    width: 65%;
   }
 
   .slider-2 .swiper-slide {
