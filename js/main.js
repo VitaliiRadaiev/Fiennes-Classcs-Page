@@ -66,10 +66,49 @@ let _slideToggle = (target, duration = 500) => {
 	}
 }
 //========================================
-var global = {
-	lng: '',
-	lat: '',
+
+//========================================
+//Spollers
+function spollerInit() {
+	let spollers = document.querySelectorAll("._spoller");
+	if (spollers.length > 0) {
+		for (let index = 0; index < spollers.length; index++) {
+			const spoller = spollers[index];
+
+			spoller.addEventListener("click", function (e) {
+				e.preventDefault();
+				if (spoller.classList.contains('_spoller-992') && window.innerWidth > 992) {
+					return false;
+				}
+				if (spoller.classList.contains('_spoller-768') && window.innerWidth > 768) {
+					return false;
+				}
+				if (spoller.closest('._spollers').classList.contains('_one')) {
+					let curent_spollers = spoller.closest('._spollers').querySelectorAll('._spoller');
+					for (let i = 0; i < curent_spollers.length; i++) {
+						let el = curent_spollers[i];
+						if (el != spoller) {
+							el.classList.remove('_active');
+							el.parentElement.classList.remove('_active');
+							_slideUp(el.nextElementSibling);
+						}
+					}
+				}
+				spoller.classList.toggle('_active');
+
+				
+				if(spoller.classList.contains('_active')) {
+					spoller.parentElement.classList.add('_active');
+				} else {
+					spoller.parentElement.classList.remove('_active');
+				}
+				_slideToggle(spoller.nextElementSibling);
+			});
+		}
+	}
 }
+
+//
 
 $(document).ready(function() {
 	// ==== Popup form handler====
@@ -315,40 +354,42 @@ cardJournalHandler();;
 			var mySwiper = new Swiper(item.querySelector('.swiper-container'), {
 			slidesPerView:1,
 			autoHeight: true,
-			loop: true,
+			//loop: true,
 			speed: 600,
 			spaceBetween: 15,
+			autoplay: {
+			  delay: 8000,
+			   disableOnInteraction: false,
+			},
+			// scrollbar: {
+			//   el: item.querySelector('.swiper-scrollbar'),
+			// },
 			pagination: {
-			    el: item.querySelector('.swiper-container > .swiper-pagination'),
-			    clickable: true,
+			    el: item.querySelector('.swiper-pagination'),
+			     clickable: true,
+			     renderBullet: function(index, className) {
+			     	return '<div class="' + className + '"> <span class="progress"></span> </div>'
+			     }
 			  },
-			on: {
-				slideChange: function() {
-					if(paginationMode) {
-						paginationMode();
-					}
-				}
-			}  
+			 on: {
+
+			 	slideChangeTransitionStart: function(current) {
+			 		let pagination = item.querySelector('.swiper-pagination');
+			 		let lenght = pagination.children.length;
+			 		
+			 		for(let i = 0; i < lenght; i++) {
+			 			if(i == current.activeIndex) break;
+			 			pagination.children[i].classList.add('isShow');
+			 		}
+
+			 		for(let i = current.activeIndex; i < lenght; i++) {
+			 			pagination.children[i].classList.remove('isShow');
+			 			pagination.children[i].firstElementChild.style.transform = 'scaleX(0)';
+			 		}
+			 	}
+			 },  
 		})
 
-		    paginationMode = () => {
-				item.querySelectorAll('.swiper-slide').forEach(slide => {
-				let pagination = item.querySelector('.swiper-container > .swiper-pagination').cloneNode(true);
-					let innerPagin = slide.querySelector('.swiper-pagination');
-
-					if(innerPagin) {
-						innerPagin.remove();
-					}
-
-					slide.append(pagination);
-					item.querySelector('.swiper-container').style.height = 'auto';
-				})
-			}
-
-			paginationMode();
-			
-			let slide = item.querySelector('.swiper-slide.swiper-slide-active');
-			item.querySelector('.swiper-container').style.height = slide.clientHeight + 'px';
 		});
 
 	}
@@ -414,6 +455,18 @@ cardVideoHandler();;
 
 // === HEADER ==================================================================
 {
+	let mobileTopBtn = document.querySelector('.header__mobile-btn');
+	if(mobileTopBtn) {
+		mobileTopBtn.addEventListener('click', function() {
+			if(document.documentElement.clientWidth < 768) {
+				this.classList.toggle('_active');
+				_slideToggle(this.nextElementSibling);
+			}
+		})
+	}
+}
+
+{
 	let btn = document.querySelector('.header__switch-btn'); {
 		if(btn) {
 			btn.addEventListener('click', (e) => {
@@ -434,38 +487,120 @@ cardVideoHandler();;
 			})
 		}
 	}
+}
+
+{
+	let navMenu = document.querySelector('.header__menu-list');
+	if(navMenu) {
+		function addClasses() {
+			if(document.documentElement.clientWidth < 992) {
+				navMenu.classList.add('_spollers', '_one');
+				navMenu.querySelectorAll('.header__menu-list > li > a').forEach(link => {
+					console.log(link);
+					if(link.nextElementSibling) {
+						link.classList.add('_spoller');
+
+					}
+					
+				})
+			}
+		}
+
+		function removeClasses() {
+				navMenu.classList.remove('_spollers', '_one');
+				navMenu.querySelectorAll('.header__menu-link').forEach(link => {
+					link.classList.remove('_spoller');
+				})
+		}
+		addClasses() ;
+		spollerInit();
+		
+		window.addEventListener('resize', function() {
+			if(document.documentElement.clientWidth < 992) {
+				addClasses();
+				spollerInit();
+			} else {
+				removeClasses();
+			}
+		})
+	}
 };
 // === // HEADER ==================================================================
 
 
 // === HOME ==================================================================
+// // == hero slider ==========================================================================
+// {
+// 	let heroSlider = document.querySelector('.hero-slider .swiper-container');
+// 	if(heroSlider) {
+
+// 		var mySwiper = new Swiper(heroSlider, {
+// 		slidesPerView:1,
+// 		//loop: true,
+// 		effect: 'fade',
+// 		autoplay: {
+// 		  delay: 4000,
+// 		},
+// 		speed: 1000,
+
+// 		// pagination: {
+// 		//     el: heroSlider.querySelector('.swiper-pagination'),
+// 		//      clickable: true,
+// 		//      type: 'progressbar',
+// 		//   },
+// 		scrollbar: {
+// 		  el: heroSlider.querySelector('.swiper-scrollbar'),
+// 		},
+// 		})
+// 	}
+// }
+// // == and hero slider ==========================================================================
+
 // == hero slider ==========================================================================
 {
 	let heroSlider = document.querySelector('.hero-slider .swiper-container');
 	if(heroSlider) {
 
-		var mySwiper = new Swiper(heroSlider, {
+		let mySwiper = new Swiper(heroSlider, {
 		slidesPerView:1,
-		//loop: true,
 		effect: 'fade',
 		autoplay: {
 		  delay: 4000,
+		  disableOnInteraction: false,
 		},
 		speed: 1000,
 
-		// pagination: {
-		//     el: heroSlider.querySelector('.swiper-pagination'),
-		//      clickable: true,
-		//      type: 'progressbar',
-		//   },
-		scrollbar: {
-		  el: heroSlider.querySelector('.swiper-scrollbar'),
-		},
+		pagination: {
+		    el: heroSlider.querySelector('.swiper-pagination'),
+		     clickable: true,
+		     renderBullet: function(index, className) {
+		     	return '<div class="' + className + '"> <span class="progress"></span> </div>'
+		     }
+		  },
+		 on: {
+
+		 	slideChangeTransitionStart: function(current) {
+		 		let pagination = heroSlider.querySelector('.swiper-pagination');
+		 		let lenght = pagination.children.length;
+		 		
+		 		for(let i = 0; i < lenght; i++) {
+		 			if(i == current.activeIndex) break;
+		 			pagination.children[i].classList.add('isShow');
+		 		}
+
+		 		for(let i = current.activeIndex; i < lenght; i++) {
+		 			pagination.children[i].classList.remove('isShow');
+		 			pagination.children[i].firstElementChild.style.transform = 'scaleX(0)';
+		 		}
+		 	}
+		 } 
+		// scrollbar: {
+		//   el: heroSlider.querySelector('.swiper-scrollbar'),
+		// },
 		})
 	}
 }
 // == and hero slider ==========================================================================
-
 
 
 // ==  slider ==========================================================================
@@ -476,17 +611,40 @@ cardVideoHandler();;
 			var mySwiper = new Swiper(item.querySelector('.swiper-container'), {
 			slidesPerView:1,
 			effect: 'fade',
-			loop: true,
+			//loop: true,
 			speed: 600,
 			autoplay: {
-			  delay: 3000,
+			  delay: 4000,
+			   disableOnInteraction: false,
 			},
 			spaceBetween: 15,
 			pagination: {
 			    el: item.querySelector('.swiper-pagination'),
-			   // clickable: true,
-			    type: 'progressbar',
+			     clickable: true,
+			     renderBullet: function(index, className) {
+			     	return '<div class="' + className + '"> <span class="progress"></span> </div>'
+			     }
 			  },
+			 on: {
+
+			 	slideChangeTransitionStart: function(current) {
+			 		let pagination = item.querySelector('.swiper-pagination');
+			 		let lenght = pagination.children.length;
+			 		
+			 		for(let i = 0; i < lenght; i++) {
+			 			if(i == current.activeIndex) break;
+			 			pagination.children[i].classList.add('isShow');
+			 		}
+
+			 		for(let i = current.activeIndex; i < lenght; i++) {
+			 			pagination.children[i].classList.remove('isShow');
+			 			pagination.children[i].firstElementChild.style.transform = 'scaleX(0)';
+			 		}
+			 	}
+			 }, 
+				// scrollbar: {
+				//   el: item.querySelector('.swiper-scrollbar'),
+				// },
 			})
 		})
 	}
@@ -496,41 +654,46 @@ cardVideoHandler();;
 
 // ==  slider-2 ==========================================================================
 {
-	let slider = document.querySelector('.slider-2 .swiper-container');
-	if(slider) {
+	let slider = document.querySelectorAll('.slider-2 .swiper-container');
 
-	    var mySwiper = new Swiper(slider, {
-		slidesPerView:'auto',
-		speed: 600,
-		spaceBetween: 65,
-		centeredSlides: true,
-		scrollbar: {
-		  el: slider.querySelector('.swiper-scrollbar'),
-		},
-		on: {
-			slideChange: () => {
-				console.log('test11')
-				if(mySwiper) {
-					console.dir(mySwiper);
-				}
-			}
-		}, 
-		 breakpoints: {
-		 	320: {
-		 		spaceBetween: 15
-		 	},
-		   768: {
-		     spaceBetween: 30
-		   },
-		   1024: {
-		   	spaceBetween: 65
-		   },
-		 },  
+	if(slider.length>0) {
+		//let childrenLength = slider.querySelector('.swiper-wrapper').children.length;
+		slider.forEach(item => {
+			let mySwiper;
+			    mySwiper = new Swiper(item, {
+				slidesPerView:'auto',
+				speed: 600,
+				spaceBetween: 65,
+				centeredSlides: true,
+				//initialSlide: childrenLength - 1,
+				touchRatio: 1,
+				scrollbar: {
+				  el: item.querySelector('.swiper-scrollbar'),
+				   draggable: true,
+				},
+				// on: {
+				// 	slideChange: () => {
+				// 		if(mySwiper) {
+				// 			console.dir(mySwiper);
+				// 		}
+				// 	}
+				// }, 
+				 breakpoints: {
+					 320: {
+						 spaceBetween: 15
+					 },
+				   768: {
+					 spaceBetween: 30
+				   },
+				   1024: {
+					   spaceBetween: 65
+				   },
+				 },  
+				})
 		})
-
-		mySwiper.on('slideChange', function () {
-		  console.log('slide changed');
-		});
+		// mySwiper.on('slideChange', function () {
+		//   console.log('slide changed');
+		// });
 
 	}
 
@@ -568,6 +731,8 @@ cardVideoHandler();;
 
 		tabs.forEach(contetn => {
 			addColumns(contetn.querySelector('.info-block__tabs-text-wrap'));
+			distributeEl(contetn.querySelector('.info-block__tabs-text-wrap'))
+			contetn.style.display = 'none'
 		})
 
 
@@ -596,6 +761,49 @@ cardVideoHandler();;
 				block.append(column);
 			}
 
+		}
+
+		function distributeEl(block) {
+			let thamb = true;
+			let count = 0;
+			while (thamb) {
+
+				console.log('tick')
+				let column1 = block.children[0];
+				let column2 = block.children[1];
+				let column3 = block.children[2];
+
+				const findHeight = (column) => {
+					let count = 0;
+					for(let el of column.children) {
+						count += el.scrollHeight;
+					}
+					return count;
+				}
+
+				findHeight(column2)
+
+				let arrElHeight = [findHeight(column1), findHeight(column2), findHeight(column3)];
+				let maxHeight = Math.max(...arrElHeight);
+				let maxHeightIndex = arrElHeight.indexOf(maxHeight)
+
+				let minHeight = Math.min(...arrElHeight);
+				let minHeightIndex = arrElHeight.indexOf(minHeight)
+
+
+				if(maxHeight - minHeight > 200) {
+					let el = block.children[maxHeightIndex].lastElementChild;
+					block.children[minHeightIndex].append(el);
+				} else {
+					thamb = false;
+				}
+
+				count++;
+
+				if(count >= 10) {
+					thamb = false;
+				}
+			}
 		}
 	}
 }
@@ -775,15 +983,15 @@ function selects_update_all() {
 	if(isMap) {
 		var map;
 
-		let center = {
-			lat: 51.735542,
-			lng: -1.666285,
-		}
+		// let center = {
+		// 	lat: 51.735394,
+		// 	lng: -1.666271,
+		// }
 
-		let markerPosition = {
-			lat: 51.735542,
-			lng: -1.666285,
-		}
+		// let markerPosition = {
+		// 	lat: 51.735394,
+		// 	lng: -1.666271,
+		// }
 
 		// Функция initMap которая отрисует карту на странице
 		function initMap() {
@@ -792,10 +1000,10 @@ function selects_update_all() {
 			map = new google.maps.Map(document.getElementById('map'), {
 				// При создании объекта карты необходимо указать его свойства
 				// center - определяем точку на которой карта будет центрироваться
-				center: {lat: center.lat, lng: center.lng},
+				center: {lat: +global.lat, lng: +global.lng},
 				// zoom - определяет масштаб. 0 - видно всю платнеу. 18 - видно дома и улицы города.
 
-				zoom: 14,
+				zoom: 16,
 
 				// Добавляем свои стили для отображения карты
 				//styles: 
@@ -805,7 +1013,7 @@ function selects_update_all() {
 			var marker = new google.maps.Marker({
 
 				// Определяем позицию маркера
-			    position: {lat: markerPosition.lat, lng: markerPosition.lng},
+			    position: {lat: +global.lat, lng: +global.lng},
 
 			    // Указываем на какой карте он должен появится. (На странице ведь может быть больше одной карты)
 			    map: map,
