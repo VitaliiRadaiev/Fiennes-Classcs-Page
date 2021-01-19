@@ -1043,7 +1043,7 @@ a {
 .block-columns-2 .column {
   width: 50%;
   padding: 0 2.5rem;
-  margin-bottom: 10.5rem;
+  margin-bottom: 7rem;
 }
 
 .block-columns-3 {
@@ -1478,7 +1478,7 @@ a {
 }
 
 .one-img-block {
-  margin: 13.3rem 0 13.3rem;
+  margin: 6.6rem 0 6.6rem;
 }
 
 .one-img-block img {
@@ -1495,7 +1495,7 @@ a {
 }
 
 .three-img-block {
-  margin-bottom: 12rem;
+  margin-bottom: 6.6rem;
 }
 
 .three-img-block_reverse .three-img-block__body {
@@ -3642,7 +3642,7 @@ textarea.input {
 }
 
 .home__text-block {
-  margin: 15.3rem 0 15.3rem;
+  margin: 7.65rem 0 7.65rem;
 }
 
 .home__slider {
@@ -3652,26 +3652,27 @@ textarea.input {
 }
 
 .home__text-block-2 {
-  margin: 13.3rem 0 20.3rem;
+  margin: 6.6rem 0 10rem;
 }
 
 .home__video {
-  margin: 7rem 0 15.6rem;
+  margin: 7rem 0 6.6rem;
 }
 
 .home__slider-2 {
-  margin: 7rem auto;
+  margin: 6.6rem auto;
   padding: 0 0;
 }
 
 .home__text-block-3 {
-  margin: 13.3rem 0 20.3rem;
+  margin: 6.6rem 0 10rem;
 }
 
 .home__founder {
   padding: 14.4rem 1.5rem 15rem;
   background-color: #f1f0f0;
   text-align: center;
+  margin-bottom: 6.6rem;
 }
 
 .home__founder-suptitle {
@@ -3693,7 +3694,7 @@ textarea.input {
 }
 
 .home__journal {
-  margin: 15.5rem 0 15.5rem;
+  margin: 6.6rem 0 6.6rem;
 }
 
 .home__journal-suptitle {
@@ -3893,6 +3894,7 @@ textarea.input {
 }
 
 .slider {
+  margin-bottom: 6.6rem;
   /*	& .scrollbar-wrap {
 		position: absolute;
 		bottom: 2.7rem;
@@ -4091,6 +4093,10 @@ textarea.input {
   white-space: nowrap;
 }
 
+.slider-2 {
+  margin-bottom: 6.6rem;
+}
+
 .slider-2 .swiper-slide {
   width: 75%;
   cursor: -webkit-grab;
@@ -4165,10 +4171,6 @@ textarea.input {
   display: inline;
 }
 
-.ownership_posts.marques__awards {
-  margin-top: 16rem;
-}
-
 .ownership_posts.marques__awards .awards-block__head {
   margin-bottom: 8rem;
 }
@@ -4229,16 +4231,24 @@ textarea.input {
   border-bottom: 1rem solid #5a92ab;
 }
 
+.res-single__hero.slider .hero-slider__body {
+  padding: 0;
+}
+
 .res-single__text-block {
-  margin: 15.3rem 0 13.3rem;
+  margin: 6.6rem 0 10rem;
 }
 
 .res-single__text-block-2 {
-  margin: 15.3rem 0 15.3rem;
+  margin: 6.6rem 0 10rem;
 }
 
 .res-single__text-block-3 {
-  margin: 15.3rem 0 15.3rem;
+  margin: 6.6rem 0 10rem;
+}
+
+.res-single__text-block-4 {
+  margin: 6.6rem 0 10rem;
 }
 
 .res-single__book-restoration {
@@ -4389,16 +4399,16 @@ textarea.input {
 }
 
 .restoration-crafts__text-block {
-  margin: 15.3rem 0 15.3rem;
+  margin: 7.65rem 0 7.65rem;
 }
 
 .restoration-crafts__crafts-block {
-  margin: 17.2rem 0 8rem;
+  margin: 7.65rem 0 0rem;
   background-color: #f9f9f9;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ffffff));
   background-image: -o-linear-gradient(top, #f9f9f9 0%, #ffffff 100%);
   background-image: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
-  padding-top: 17.6rem;
+  padding-top: 8.6rem;
 }
 
 .restoration-crafts__crafts-block-title {
@@ -4424,10 +4434,6 @@ textarea.input {
 
 .restoration-crafts__crafts-block .card__btn-wrap {
   margin-top: 5.3rem;
-}
-
-.restoration-crafts__crafts-block .block-columns-2 .column {
-  margin-bottom: 14.5rem;
 }
 
 .journal__hero {
@@ -4680,26 +4686,26 @@ textarea.input {
 }
 
 .ownership__hero {
-  margin-bottom: 5rem;
+  margin-bottom: 6.6rem;
   padding: 0 3rem;
 }
 
 .ownership__advantages {
-  margin: 17.2rem 0 8rem;
+  margin: 4rem 0 0rem;
   background-color: #f9f9f9;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ffffff));
   background-image: -o-linear-gradient(top, #f9f9f9 0%, #ffffff 100%);
   background-image: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
-  padding-top: 17.6rem;
+  padding-top: 8.6rem;
 }
 
 .ownership__servicing {
-  margin: 8.5rem 0 8rem;
+  margin: 4rem 0 0rem;
   background-color: #f9f9f9;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ffffff));
   background-image: -o-linear-gradient(top, #f9f9f9 0%, #ffffff 100%);
   background-image: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
-  padding-top: 17.6rem;
+  padding-top: 8.6rem;
 }
 
 .ownership__servicing_bottom.sevicing-ownership {
@@ -4708,7 +4714,7 @@ textarea.input {
 }
 
 .ownership__list {
-  margin: 14rem 0 6rem;
+  margin: 6.6rem 0 0rem;
 }
 
 .ownership__list .card__suptitle {
@@ -4886,11 +4892,11 @@ textarea.input {
 }
 
 .marques__subhero {
-  margin: 15.5rem 0 15rem;
+  margin: 7.5rem 0 7.5rem;
 }
 
 .marques__text-block {
-  margin: 15.3rem 0 15rem;
+  margin: 6.6rem 0 10rem;
 }
 
 .marques__text-block .text-block__title {
@@ -4918,21 +4924,21 @@ textarea.input {
 }
 
 .marques__info-block {
-  margin: 17.2rem 0 4rem;
+  margin: 4rem 0 0rem;
   background-color: #f9f9f9;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ffffff));
   background-image: -o-linear-gradient(top, #f9f9f9 0%, #ffffff 100%);
   background-image: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
-  padding-top: 17.6rem;
+  padding-top: 8.6rem;
 }
 
 .marques__awards {
-  margin: 4rem 0 8rem;
+  margin: 0rem 0 0rem;
   background-color: #f9f9f9;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ffffff));
   background-image: -o-linear-gradient(top, #f9f9f9 0%, #ffffff 100%);
   background-image: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
-  padding-top: 17.6rem;
+  padding-top: 8.6rem;
 }
 
 .marques__services .services-block .text-block__text {
@@ -5440,7 +5446,7 @@ textarea.input {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#ffffff));
   background-image: -o-linear-gradient(top, #f9f9f9 0%, #ffffff 100%);
   background-image: linear-gradient(180deg, #f9f9f9 0%, #ffffff 100%);
-  padding-top: 17.6rem;
+  padding-top: 8.6rem;
 }
 
 .product-block__head {
@@ -5482,7 +5488,7 @@ textarea.input {
 }
 
 .services-block {
-  margin: 26rem 0;
+  margin: 13rem 0;
 }
 
 .services-block__body {
@@ -5492,6 +5498,7 @@ textarea.input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 3rem;
 }
 
 .services-block__column_1 {
@@ -5850,7 +5857,7 @@ textarea.input {
 }
 
 .our-story .home__slider-2 {
-  margin: 7rem auto;
+  margin: 4rem auto 6.6rem;
   padding: 0 0;
 }
 
@@ -5915,6 +5922,8 @@ textarea.input {
 .email-submit {
   background-color: #5a92ab;
   font-size: 8px;
+  position: relative;
+  overflow: hidden;
 }
 
 .email-submit__body {
@@ -5955,8 +5964,12 @@ textarea.input {
 .email-submit__text {
   color: #ffffff;
   font-size: 2em;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.1em;
+}
+
+.email-submit__text > span {
+  color: #5a92ab;
 }
 
 .email-submit__form {
@@ -5969,22 +5982,31 @@ textarea.input {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 7em;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-transition: all .4s ease;
   -o-transition: all .4s ease;
   transition: all .4s ease;
+  margin-top: 0 !important;
 }
 
 .email-submit__form .wpcf7-response-output {
   font-size: 14px;
   color: #fff;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  margin-top: 16px !important;
+}
+
+.email-submit__form .ajax-loader {
+  width: 0 !important;
+  height: 0 !important;
+  display: block !important;
 }
 
 .email-submit__form-item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 calc(100% - 15.333em);
-          flex: 0 1 calc(100% - 15.333em);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .email-submit__form-item:last-child {
@@ -6008,6 +6030,8 @@ textarea.input {
   font-size: 1.6em;
   color: #000000;
   font-weight: 700;
+  border-radius: 0;
+  -webkit-border-radius: 0px;
 }
 
 .email-submit__form-input::-webkit-input-placeholder {
@@ -6751,10 +6775,6 @@ textarea.input {
     margin-bottom: 5rem;
   }
 
-  .home__journal {
-    margin: 12rem 0 12rem;
-  }
-
   .journal__content-list .column {
     margin-bottom: 9rem;
   }
@@ -6841,10 +6861,6 @@ textarea.input {
     width: 50%;
   }
 
-  .restoration-crafts__crafts-block {
-    margin: 14rem 0 8rem;
-  }
-
   .restoration-crafts__crafts-block-title {
     margin-bottom: 10rem;
   }
@@ -6855,11 +6871,11 @@ textarea.input {
   }
 
   .ownership__advantages {
-    margin: 14rem 0 8rem;
+    margin: 4rem 0 0rem;
   }
 
   .ownership__servicing {
-    margin: 14rem 0 8rem;
+    margin: 4rem 0 0rem;
   }
 
   .ownership-landing__crafts-block {
@@ -6871,11 +6887,11 @@ textarea.input {
   }
 
   .marques__info-block {
-    margin: 14rem 0 8rem;
+    margin: 4rem 0 0rem;
   }
 
   .marques__awards {
-    margin: 4rem 0 8rem;
+    margin: 4rem 0 0rem;
   }
 
   .marques__services .services-block:nth-child(2n) .text-block .text-block__body {
@@ -6938,10 +6954,6 @@ textarea.input {
 @media (max-width: 991.98px) {
   .text-block__title {
     margin-bottom: 3rem;
-  }
-
-  .three-img-block {
-    margin-bottom: 10rem;
   }
 
   .header__body {
@@ -7290,7 +7302,7 @@ textarea.input {
   .block-columns-2 .column {
     padding: 0 1.5rem;
     width: 100%;
-    margin-bottom: 7.5rem;
+    margin-bottom: 5rem;
   }
 
   .block-columns-3 {
@@ -7337,10 +7349,6 @@ textarea.input {
     margin-top: 3.3rem;
   }
 
-  .one-img-block {
-    margin: 12rem 0 12rem;
-  }
-
   .img-full-screen {
     padding: 0 1.5rem;
   }
@@ -7350,7 +7358,7 @@ textarea.input {
   }
 
   .three-img-block {
-    margin-bottom: 7rem;
+    margin-bottom: 6rem;
   }
 
   .three-img-block_reverse .three-img-block__row_1 {
@@ -7461,7 +7469,7 @@ textarea.input {
   }
 
   .home__text-block {
-    margin: 10rem 0 10rem;
+    margin: 6rem 0 6rem;
   }
 
   .home__slider {
@@ -7469,11 +7477,11 @@ textarea.input {
   }
 
   .home__text-block-2 {
-    margin: 12rem 0 12rem;
+    margin: 6rem 0 6rem;
   }
 
   .home__video {
-    margin: 7rem 0 12rem;
+    margin: 7rem 0 6rem;
   }
 
   .home__slider-2 {
@@ -7481,7 +7489,7 @@ textarea.input {
   }
 
   .home__text-block-3 {
-    margin: 12rem 0 12rem;
+    margin: 6rem 0 6rem;
   }
 
   .home__founder {
@@ -7503,7 +7511,6 @@ textarea.input {
 
   .home__journal {
     padding: 0 1.5rem;
-    margin: 7rem 0 7rem;
   }
 
   .home__journal .container_large {
@@ -7565,7 +7572,7 @@ textarea.input {
 
   .ownership_posts.marques__awards {
     margin-top: 10rem;
-    padding-top: 10rem;
+    padding-top: 8rem;
   }
 
   .ownership_posts.marques__awards .block-columns-2 .column {
@@ -7577,15 +7584,19 @@ textarea.input {
   }
 
   .res-single__text-block {
-    margin: 10rem 0 10rem;
+    margin: 6rem 0 6rem;
   }
 
   .res-single__text-block-2 {
-    margin: 10rem 0 10rem;
+    margin: 6rem 0 6rem;
   }
 
   .res-single__text-block-3 {
-    margin: 10rem 0 10rem;
+    margin: 6rem 0 6rem;
+  }
+
+  .res-single__text-block-4 {
+    margin: 6rem 0 6rem;
   }
 
   .res-single__book-restoration {
@@ -7601,11 +7612,7 @@ textarea.input {
   }
 
   .restoration-crafts__text-block {
-    margin: 10rem 0 10rem;
-  }
-
-  .restoration-crafts__crafts-block {
-    margin: 12rem 0 8rem;
+    margin: 6rem 0 6rem;
   }
 
   .restoration-crafts__crafts-block-title {
@@ -7626,10 +7633,6 @@ textarea.input {
 
   .restoration-crafts__crafts-block .card__btn-wrap {
     margin-top: 3.3rem;
-  }
-
-  .restoration-crafts__crafts-block .block-columns-2 .column {
-    margin-bottom: 7rem;
   }
 
   .journal__hero {
@@ -7699,11 +7702,13 @@ textarea.input {
   }
 
   .ownership__advantages {
-    margin: 12rem 0 8rem;
+    margin: 0rem 0 0rem;
+    padding-top: 6rem;
   }
 
   .ownership__servicing {
-    margin: 12rem 0 8rem;
+    margin: 0rem 0 0rem;
+    padding-top: 6rem;
   }
 
   .ownership__servicing_bottom.sevicing-ownership {
@@ -7711,7 +7716,7 @@ textarea.input {
   }
 
   .ownership__list {
-    margin: 8rem 0 0rem;
+    margin: 6rem 0 0rem;
   }
 
   .ownership__list .container_large-1400 {
@@ -7814,7 +7819,7 @@ textarea.input {
   }
 
   .marques__text-block {
-    margin: 10rem 0 10rem;
+    margin: 6rem 0 6rem;
   }
 
   .marques__text-block .text-block__title {
@@ -7822,11 +7827,12 @@ textarea.input {
   }
 
   .marques__info-block {
-    margin: 12rem 0 8rem;
+    margin: 0rem 0 0rem;
+    padding-top: 6rem;
   }
 
   .marques__awards {
-    margin: 0rem 0 8rem;
+    margin: 0rem 0 0rem;
     padding-top: 6rem;
   }
 
@@ -7891,24 +7897,6 @@ textarea.input {
     padding-bottom: 0;
   }
 
-  .bottom-marques__img {
-    background: url(../img/photo/marques-bottom-mobile-bg.png) 0 0 repeat;
-  }
-
-  .bottom-marques__img:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-  }
-
-  .bottom-marques__img img {
-    display: none;
-  }
-
   .bottom-marques__body {
     min-height: 40rem;
     padding: 2rem 1.5rem;
@@ -7940,7 +7928,6 @@ textarea.input {
 
   .product-block {
     margin: 12rem 0 8rem;
-    padding-top: 12rem;
   }
 
   .product-block__head {
@@ -7955,6 +7942,10 @@ textarea.input {
 
   .services-block {
     margin: 7rem 0;
+  }
+
+  .services-block__body {
+    padding: 0 1.5rem;
   }
 
   .services-block__column_1 {
@@ -8021,6 +8012,38 @@ textarea.input {
         -ms-flex: 0 1 33.333%;
             flex: 0 1 33.333%;
     margin-bottom: 9rem;
+  }
+
+  .email-submit__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 3em !important;
+    padding-bottom: 2em !important;
+  }
+
+  .email-submit__column {
+    margin-bottom: 20px;
+  }
+
+  .email-submit__form-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(100% - 105px);
+            flex: 1 1 calc(100% - 105px);
+  }
+
+  .email-submit__form-input {
+    height: 38px;
+  }
+
+  .email-submit__form-submit {
+    height: 38px;
+    min-width: auto;
+    width: 105px;
   }
 
   .footer__body {
@@ -8179,7 +8202,7 @@ textarea.input {
   }
 
   .home__text-block-3 {
-    margin: 7rem 0 7rem;
+    margin: 5rem 0 5rem;
   }
 
   .home__founder-text {
@@ -8224,6 +8247,10 @@ textarea.input {
     margin: 5rem 0 5rem;
   }
 
+  .res-single__text-block-4 {
+    margin: 5rem 0 5rem;
+  }
+
   .res-single__previous-restoration {
     margin: 0rem 0 7rem;
   }
@@ -8238,8 +8265,8 @@ textarea.input {
   }
 
   .restoration-crafts__crafts-block {
-    margin: 8rem 0 7rem;
-    padding-top: 9rem;
+    margin: 6rem 0 0rem;
+    padding-top: 6rem;
   }
 
   .journal__hero-suptitle {
@@ -8252,12 +8279,12 @@ textarea.input {
   }
 
   .ownership__advantages {
-    margin: 4rem 0 7rem;
+    margin: 0rem 0 0rem;
     padding-top: 6rem;
   }
 
   .ownership__servicing {
-    margin: 4rem 0 7rem;
+    margin: 0rem 0 0rem;
     padding-top: 6rem;
   }
 
@@ -8281,12 +8308,12 @@ textarea.input {
   }
 
   .marques__info-block {
-    margin: 4rem 0 7rem;
+    margin: 0rem 0 0rem;
     padding-top: 6rem;
   }
 
   .marques__awards {
-    margin: 0rem 0 7rem;
+    margin: 0rem 0 0rem;
     padding-top: 6rem;
   }
 
